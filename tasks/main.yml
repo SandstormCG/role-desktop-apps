@@ -1,0 +1,24 @@
+---
+# tasks file for desktop-apps
+
+- name: Install calibre
+  include_tasks: calibre/main.yml
+
+- name: Install element
+  include_tasks: element/main.yml
+
+- name: Install joplin
+  include_tasks: joplin/main.yml
+
+- name: Install virtualbox
+  include_tasks: virtualbox/main.yml
+
+- name: Install vscodium
+  include_tasks: vscodium/main.yml
+
+- name: Install & config qemu
+  include_tasks: qemu.yml
+  when: distro=="arch"
+
+- name: Install apps that are on repos
+  include_tasks: bulk/main.yml
