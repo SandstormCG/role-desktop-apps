@@ -23,6 +23,15 @@
     state: present
   become: yes
 
+- name: Remove brltty packages that cause really slow system shutdowns
+  pacman: 
+    name: 
+      - brltty
+      - qemu-chardev-baum
+    state: absent
+    force: yes
+  become: yes
+
 #- name: Enable qemu-kvm service
 #  systemd:
 #    name: libvirtd.service
