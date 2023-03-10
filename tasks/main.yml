@@ -22,3 +22,7 @@
 
 - name: Install apps that are on repos
   include_tasks: bulk/main.yml
+
+- name: Install sublime-merge
+  include_tasks: sublime_merge.yml
+  when: distro=="arch"
